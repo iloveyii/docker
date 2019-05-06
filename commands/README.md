@@ -1,4 +1,4 @@
-#Docker Commands 
+# Docker Commands 
 Create a file called Dockerfile in the root directory with the following contents.
 ```
 FROM php:7.0-apache

@@ -7,7 +7,7 @@ EXPOSE 80
 ```
 Then build the container with tag name hello-world as :
 ```
-docker build -tag hello-world .
+docker build --tag hello-world .
 ```
 Run the container by providing a port mapping in the command as :
 ```

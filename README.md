@@ -34,13 +34,39 @@ docker run -p 80:80 -v /home/username/project/src/.:/var/www/html hello-world
 
 # Docker Compose
 Docker compose is used to make it easy to run multiple containers by specifying them in a file with name
-docker-compose.yml.
+docker-compose.yml. This is like a configuration file which make it easy to not write the options in the command line again and again.
+
+A sample docker-compose file look like:
+
+```
+version: '3'
+
+services:
+  product-service:
+    build: ./product
+    volumes:
+      - ./product:/usr/src/app
+    ports:
+      - 5001:80
+  website:
+    build: ./website
+    image: php:apache
+    volumes:
+      - ./website:/var/www/html
+    ports:
+      - 5000:80
+    depends_on:
+      - product-service
+
+```
 
 To start all containers in the compose file use the command:
 ```
 docker-compose up
 
 ```
+
+
 
 
 

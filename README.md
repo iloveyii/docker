@@ -65,7 +65,7 @@ services:
 
 To start all containers in the compose file use the command:
 ```
-docker-compose up
+sudo docker-compose up
 
 ```
 
@@ -74,3 +74,10 @@ docker-compose up
 
 
 # Deploy Docker Containers
+
+
+# Problems and solutions
+  * ERROR: Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+    - You need to use `sudo docker-compose up`
+  * Unsupported config option for services:
+    - This is usually indentation problem in config files
